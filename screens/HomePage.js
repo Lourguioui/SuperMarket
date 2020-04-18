@@ -11,6 +11,14 @@ import { AppLoading } from 'expo';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
+const fetchFonts = () => {
+    return Font.loadAsync({
+        'josefin-sans': require('../assets/fonts/JosefinSans-Bold.ttf'),
+        'josefin-sans-medium': require('../assets/fonts/JosefinSans-Medium.ttf'),
+        'open-sans-bold': require('../assets/fonts/OpenSans-Bold.ttf')
+
+    });
+};
 // const fetchFonts = () => {
 //     return Font.loadAsync({
 //       'josefin-sans': require('./assets/fonts/JosefinSans-Bold.ttf'),
@@ -36,8 +44,17 @@ export default class HomePage extends React.Component {
     // }
     state = {
         isTopOpen: false,
+        dataloaded: false,
     }
     render() {
+        if (!this.state.dataloaded) {
+            return (
+                <AppLoading
+                    startAsync={fetchFonts}
+                    onFinish={() => this.setState({ dataloaded: true })}
+                />
+            );
+        }
         return (
             <View style={styles.container}>
                 <Header
@@ -68,8 +85,8 @@ export default class HomePage extends React.Component {
                     startOpen={this.state.isTopOpen}
                     backdropOpacity={0.2}
                     swipeToClose={false}
-                    onOpened={() => { this.setState({isTopOpen : true}) }}
-                    onClosed={() => {this.setState({isTopOpen:false})}}
+                    onOpened={() => { this.setState({ isTopOpen: true }) }}
+                    onClosed={() => { this.setState({ isTopOpen: false }) }}
                 >
                     <View style={{ backgroundColor: '#00000000', flex: 1, flexDirection: "column" }}>
                         <View style={styles.closeContainer}>
