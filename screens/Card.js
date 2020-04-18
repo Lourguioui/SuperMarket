@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ScrollView, ImageBackground, Animated } from 'react-native';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
@@ -17,6 +17,7 @@ const fetchFonts = () => {
 export default class Card extends React.Component {
     state = {
         dataloaded: false,
+        animation : new Animated.Value(0),
     }
     render() {
         if (!this.state.dataloaded) {
@@ -35,21 +36,32 @@ export default class Card extends React.Component {
                     </Text>
                 </View>
                 <ScrollView style={styles.cardElements}>
-                    <View style={styles.cards}>
+                    <TouchableOpacity style={styles.cards} activeOpacity={0.8}>
                         <Image source={require('../assets/icons2/broccoli.png')} style={styles.cardImage} />
                         <Text style={styles.cardText1} >Broccoli</Text>
-
-                    </View>
-                    <View style={styles.cards}>
+                        <View style={styles.contentContainer}>
+                            <Text style={styles.contentText}>300g</Text>
+                            <Text style={styles.contentText1}>DZD300</Text>
+                        </View>
+                        
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.cards} activeOpacity={0.8}>
                         <Image source={require('../assets/icons2/pepper.png')} style={styles.cardImage} />
                         <Text style={styles.cardText1} >Red Pepper</Text>
+                        <View style={styles.contentContainer}>
+                            <Text style={styles.contentText}>300g</Text>
+                            <Text style={styles.contentText1}>DZD300</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.cards} activeOpacity={0.8}>
+                        <Image source={require('../assets/icons2/strawberry.png')} style={styles.cardImage} />
+                        <Text style={styles.cardText1} >Strawberry</Text>
+                        <View style={styles.contentContainer}>
+                            <Text style={styles.contentText}>300g</Text>
+                            <Text style={styles.contentText1}>DZD300</Text>
+                        </View>
                         
-                    </View>
-                    <View style={styles.cards}>
-                        <Image source={require('../assets/icons2/broccoli.png')} style={styles.cardImage} />
-                        <Text style={styles.cardText1} >Broccoli</Text>
-                        
-                    </View>
+                    </TouchableOpacity>
                 </ScrollView>
             </View>
         );
@@ -104,5 +116,22 @@ const styles = StyleSheet.create({
         paddingLeft:10,
         fontSize:16,
         color:'#748A9D',
+    },
+    contentText:{
+        marginRight:10,
+        color : '#A6BCD0',
+        fontSize:16,
+        
+    },
+    contentText1:{
+        marginRight:10,
+        color:'#748A9D',
+        fontSize:16,
+    },
+    contentContainer:{
+        flex :1,
+        flexDirection:'row',
+        justifyContent:'flex-end',
+        
     }
 })
