@@ -65,16 +65,22 @@ export default class Card extends React.Component {
                 </ScrollView>
                 <View style={styles.priceContainer}>
                     <View style={styles.labelContainer}>
-                        <Text style={{fontSize:16,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>Sub-Total</Text>
-                        <Text style={{fontSize:16,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>Delivery</Text>
-                        <Text style={{fontSize:24,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>Total</Text>
+                        <Text style={{ fontSize: 16, fontFamily: 'josefin-sans-medium', color: '#748A9D', marginTop: 10 }}>Sub-Total</Text>
+                        <Text style={{ fontSize: 16, fontFamily: 'josefin-sans-medium', color: '#748A9D', marginTop: 10 }}>Delivery</Text>
+                        <Text style={{ fontSize: 24, fontFamily: 'josefin-sans-medium', color: '#748A9D', marginTop: 10 }}>Total</Text>
                     </View>
                     <View style={styles.labelValues}>
-                        <Text style={{fontSize:16,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>DZD450</Text>
-                        <Text style={{fontSize:16,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>Standard (Free)</Text>
-                        <Text style={{fontSize:24,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>DZD450</Text>
+                        <Text style={{ fontSize: 16, fontFamily: 'josefin-sans-medium', color: '#748A9D', marginTop: 10 }}>DZD450</Text>
+                        <Text style={{ fontSize: 16, fontFamily: 'josefin-sans-medium', color: '#748A9D', marginTop: 10 }}>Standard (Free)</Text>
+                        <Text style={{ fontSize: 24, fontFamily: 'josefin-sans-medium', color: '#748A9D', marginTop: 10 }}>DZD450</Text>
                     </View>
+                    
                 </View>
+
+                <TouchableOpacity style={styles.mainButton}>
+                    <Text style={{color:'#fff',fontSize:14,fontFamily:'open-sans-bold'}}> > CHECKOUT </Text>
+                </TouchableOpacity>
+
             </View>
         );
     }
@@ -106,8 +112,6 @@ const styles = StyleSheet.create({
         paddingTop: '5%',
         left: '5%',
         right: '5%',
-
-
     },
     cards: {
         flex: 1,
@@ -144,21 +148,30 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-end',
     },
     priceContainer: {
-        flex: 1,
-       
+        flex:1,
         flexDirection: 'row',
-        marginTop: -20
     },
     labelContainer: {
         flex: 1,
         flexDirection: 'column',
-        paddingLeft:'14%'
+        paddingLeft: '14%',
+
 
     },
     labelValues: {
         flex: 1,
         flexDirection: 'column'
+    },
+    mainButton:{
+        backgroundColor:'#EC8A18',
+        height :60,
+        width: '80%',
+        left:'10%',
+        right:'10%',
+        borderRadius:30,
+        alignContent:'center',
+        alignItems:'center',
+        justifyContent:'center',
+        bottom:'14%'
     }
-
-
 })
