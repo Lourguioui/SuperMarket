@@ -17,7 +17,7 @@ const fetchFonts = () => {
 export default class Card extends React.Component {
     state = {
         dataloaded: false,
-        animation : new Animated.Value(0),
+        animation: new Animated.Value(0),
     }
     render() {
         if (!this.state.dataloaded) {
@@ -43,7 +43,7 @@ export default class Card extends React.Component {
                             <Text style={styles.contentText}>300g</Text>
                             <Text style={styles.contentText1}>DZD300</Text>
                         </View>
-                        
+
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.cards} activeOpacity={0.8}>
                         <Image source={require('../assets/icons2/pepper.png')} style={styles.cardImage} />
@@ -60,9 +60,21 @@ export default class Card extends React.Component {
                             <Text style={styles.contentText}>300g</Text>
                             <Text style={styles.contentText1}>DZD300</Text>
                         </View>
-                        
+
                     </TouchableOpacity>
                 </ScrollView>
+                <View style={styles.priceContainer}>
+                    <View style={styles.labelContainer}>
+                        <Text style={{fontSize:16,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>Sub-Total</Text>
+                        <Text style={{fontSize:16,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>Delivery</Text>
+                        <Text style={{fontSize:24,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>Total</Text>
+                    </View>
+                    <View style={styles.labelValues}>
+                        <Text style={{fontSize:16,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>DZD450</Text>
+                        <Text style={{fontSize:16,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>Standard (Free)</Text>
+                        <Text style={{fontSize:24,fontFamily:'josefin-sans-medium',color:'#748A9D',marginTop:10}}>DZD450</Text>
+                    </View>
+                </View>
             </View>
         );
     }
@@ -77,7 +89,7 @@ const styles = StyleSheet.create({
         top: 0,
         justifyContent: 'center',
         alignItems: 'center',
-        height: '22%',
+        height: '18%',
         backgroundColor: 'white',
         borderBottomEndRadius: 30,
         borderBottomStartRadius: 30,
@@ -90,9 +102,8 @@ const styles = StyleSheet.create({
     },
     cardElements: {
         flex: 1,
-        
         width: '90%',
-        paddingTop: '10%',
+        paddingTop: '5%',
         left: '5%',
         right: '5%',
 
@@ -100,38 +111,54 @@ const styles = StyleSheet.create({
     },
     cards: {
         flex: 1,
-        flexDirection:'row',
-        height: 60,
+        flexDirection: 'row',
+        height: 55,
         backgroundColor: '#F0F4F8',
-        borderRadius:10,
-        alignItems:'center',
-        paddingLeft:10,
-        paddingRight:10,
-        marginBottom : 15
+        borderRadius: 10,
+        alignItems: 'center',
+        paddingLeft: 10,
+        paddingRight: 10,
+        marginBottom: 15
     },
-    cardImage:{
+    cardImage: {
 
     },
-    cardText1:{
-        paddingLeft:10,
-        fontSize:16,
-        color:'#748A9D',
+    cardText1: {
+        paddingLeft: 10,
+        fontSize: 16,
+        color: '#748A9D',
     },
-    contentText:{
-        marginRight:10,
-        color : '#A6BCD0',
-        fontSize:16,
-        
+    contentText: {
+        marginRight: 10,
+        color: '#A6BCD0',
+        fontSize: 16,
     },
-    contentText1:{
-        marginRight:10,
-        color:'#748A9D',
-        fontSize:16,
+    contentText1: {
+        marginRight: 10,
+        color: '#748A9D',
+        fontSize: 16,
     },
-    contentContainer:{
-        flex :1,
-        flexDirection:'row',
-        justifyContent:'flex-end',
-        
+    contentContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+    },
+    priceContainer: {
+        flex: 1,
+       
+        flexDirection: 'row',
+        marginTop: -20
+    },
+    labelContainer: {
+        flex: 1,
+        flexDirection: 'column',
+        paddingLeft:'14%'
+
+    },
+    labelValues: {
+        flex: 1,
+        flexDirection: 'column'
     }
+
+
 })
