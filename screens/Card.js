@@ -35,7 +35,7 @@ export default class Card extends React.Component {
                         Cart
                     </Text>
                 </View>
-                <ScrollView style={styles.cardElements}>
+                <ScrollView style={styles.cardElements} showsHorizontalScrollIndicator={false} showsVerticalScrollIndicator={false}>
                     <TouchableOpacity style={styles.cards} activeOpacity={0.8}>
                         <Image source={require('../assets/icons2/broccoli.png')} style={styles.cardImage} />
                         <Text style={styles.cardText1} >Broccoli</Text>
@@ -77,7 +77,7 @@ export default class Card extends React.Component {
                     
                 </View>
 
-                <TouchableOpacity style={styles.mainButton}>
+                <TouchableOpacity style={styles.mainButton} activeOpacity={0.8}>
                     <Text style={{color:'#fff',fontSize:14,fontFamily:'open-sans-bold'}}> > CHECKOUT </Text>
                 </TouchableOpacity>
 
@@ -164,10 +164,10 @@ const styles = StyleSheet.create({
     },
     mainButton:{
         backgroundColor:'#EC8A18',
-        height :60,
-        width: '80%',
-        left:'10%',
-        right:'10%',
+        height :55,
+        width: '90%',
+        left:'5%',
+        right:'5%',
         borderRadius:30,
         alignContent:'center',
         alignItems:'center',
