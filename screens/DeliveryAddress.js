@@ -13,7 +13,7 @@ const fetchFonts = () => {
     });
 };
 
-export default class Delivery extends React.Component {
+export default class DeliveryAdress extends React.Component {
     state = {
         dataloaded: false,
     }
