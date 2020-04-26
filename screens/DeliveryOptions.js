@@ -29,13 +29,13 @@ export default function DeliveryOptions() {
 
     const checkStandardSpeed = () => {
         setStandardChecked(!standardChecked)
-        if(sonicChecked){
+        if (sonicChecked) {
             setSonicChecked(false);
         }
     }
-    const checkSonicSpeed = () =>{
+    const checkSonicSpeed = () => {
         setSonicChecked(!sonicChecked)
-        if(standardChecked){
+        if (standardChecked) {
             setStandardChecked(false);
         }
     }
@@ -64,27 +64,58 @@ export default function DeliveryOptions() {
                         <Text style={styles.priceText}>2-3 days (free)</Text>
                         <TouchableOpacity onPress={checkStandardSpeed}>
                             {
-                                (standardChecked) ? (<Image source={require('../assets/icons2/checkbox-selected.png')} style={{marginTop:15,marginBottom:15}}/>) : 
+                                (standardChecked) ? (<Image source={require('../assets/icons2/checkbox-selected.png')} style={{ marginTop: 15, marginBottom: 15 }} />) :
 
-                                <Image source={require('../assets/icons2/ellipse.png')} style={{marginTop:15,marginBottom:15,height:25,width:25}}/>
+                                    <Image source={require('../assets/icons2/ellipse.png')} style={{ marginTop: 15, marginBottom: 15, height: 25, width: 25 }} />
                             }
                         </TouchableOpacity>
-                        
+
                     </View>
                     <View style={styles.sonic}>
                         <Image source={require('../assets/icons2/icon-fast-delivery.png')} />
                         <Text style={styles.speedTypeText} >Supersonic</Text>
                         <Text style={styles.priceText}>Next day (DZD499)</Text>
                         <TouchableOpacity onPress={checkSonicSpeed}>
-                        {
-                                (sonicChecked) ? (<Image source={require('../assets/icons2/checkbox-selected.png')} style={{marginTop:15,marginBottom:15,height:25,width:25}}/>) : 
+                            {
+                                (sonicChecked) ? (<Image source={require('../assets/icons2/checkbox-selected.png')} style={{ marginTop: 15, marginBottom: 15, height: 25, width: 25 }} />) :
 
-                                <Image source={require('../assets/icons2/ellipse.png')} style={{marginTop:15,marginBottom:15, height:25,width:25}}/>
+                                    <Image source={require('../assets/icons2/ellipse.png')} style={{ marginTop: 15, marginBottom: 15, height: 25, width: 25 }} />
                             }
                         </TouchableOpacity>
                     </View>
                 </View>
             </View>
+            <View style={styles.dateSelectorContainer}>
+                <View style={styles.titleContainer}>
+                    <Text style={[styles.title, { marginLeft: 15 }]}>Select Date</Text>
+                    <ScrollView style={styles.dateLabels} horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>14 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>15 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>15 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>16 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>18 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>19 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>20 Oct</Text></TouchableOpacity>
+                    </ScrollView>
+                </View>
+            </View>
+            <View style={[styles.dateSelectorContainer, { marginTop: -10 }]}>
+                <View style={styles.titleContainer}>
+                    <Text style={[styles.title, { marginLeft: 15 }]}>Select Time</Text>
+                    <ScrollView style={styles.dateLabels} horizontal={true} showsHorizontalScrollIndicator={false}>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>14 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>15 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>15 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>16 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>18 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>19 Oct</Text></TouchableOpacity>
+                        <TouchableOpacity style={styles.date}><Text style={{ color: '#748A9D', fontSize: 16 }}>20 Oct</Text></TouchableOpacity>
+                    </ScrollView>
+                </View>
+            </View>
+            <TouchableOpacity style={styles.mainButton} activeOpacity={0.8}>
+                <Text style={{ color: '#fff', fontSize: 14, fontFamily: 'open-sans-bold' }}> > CHECKOUT </Text>
+            </TouchableOpacity>
         </View>
     )
 }
@@ -138,13 +169,13 @@ const styles = StyleSheet.create({
         width: '90%',
         left: '5%',
         right: '5%',
-        
+
         marginTop: 15,
     },
     titleContainer: {
         alignContent: 'center',
         justifyContent: 'center',
-       
+
     },
     title: {
         color: '#748A9D',
@@ -154,7 +185,7 @@ const styles = StyleSheet.create({
     speedSelector: {
         flexDirection: 'row',
         marginTop: 12,
-        
+
     },
     standard: {
 
@@ -166,7 +197,7 @@ const styles = StyleSheet.create({
         marginRight: '2.5%',
         backgroundColor: '#F0F4F8',
         paddingTop: 10,
-        borderRadius : 7
+        borderRadius: 7
     },
     sonic: {
 
@@ -178,17 +209,50 @@ const styles = StyleSheet.create({
         marginRight: '2.5%',
         backgroundColor: '#F0F4F8',
         paddingTop: 10,
-        borderRadius : 7
+        borderRadius: 7
     },
-    speedTypeText:{
-        color : '#748A9D',
-        fontSize : 16,
-        fontFamily : 'open-sans',
-        marginTop : 10
+    speedTypeText: {
+        color: '#748A9D',
+        fontSize: 16,
+        fontFamily: 'open-sans',
+        marginTop: 10
     },
-    priceText:{
-        color :'#A6BCD0',
-        fontSize : 16,
-        marginTop : 2
+    priceText: {
+        color: '#A6BCD0',
+        fontSize: 16,
+        marginTop: 2
+    },
+    dateSelectorContainer: {
+        flexDirection: 'column',
+        paddingTop: 5,
+        height: '18%',
+
+
+    },
+    dateLabels: {
+        flexDirection: 'row',
+
+    },
+    date: {
+        marginTop: 10,
+        height: 50,
+        width: 80,
+        marginLeft: 10,
+        backgroundColor: '#F0F4F8',
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 10
+    },
+    mainButton:{
+        backgroundColor:'#EC8A18',
+        height :50,
+        width: '90%',
+        left:'5%',
+        right:'5%',
+        borderRadius:30,
+        alignContent:'center',
+        alignItems:'center',
+        justifyContent:'center',
+       bottom : '1.5%'
     }
 })
