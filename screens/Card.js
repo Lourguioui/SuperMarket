@@ -9,7 +9,8 @@ const fetchFonts = () => {
     return Font.loadAsync({
         'josefin-sans': require('../assets/fonts/JosefinSans-Bold.ttf'),
         'josefin-sans-medium': require('../assets/fonts/JosefinSans-Medium.ttf'),
-        'open-sans-bold': require('../assets/fonts/OpenSans-Bold.ttf')
+        'open-sans-bold': require('../assets/fonts/OpenSans-Bold.ttf'),
+        'open-sans' : require('../assets/fonts/OpenSans-Regular.ttf')
 
     });
 };
@@ -104,7 +105,7 @@ const styles = StyleSheet.create({
     cardText: {
         color: '#748A9D',
         fontSize: 20,
-        fontFamily: 'open-sans-bold',
+        fontFamily: 'open-sans',
     },
     cardElements: {
         flex: 1,

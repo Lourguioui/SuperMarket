@@ -8,6 +8,7 @@ import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 import Card from './screens/Card';
 import HomePage from './screens/HomePage';
+import Delivery from './screens/Delivery';
 
 
 const fetchFonts = () => {
@@ -31,7 +32,7 @@ export default function App() {
     );
   }
   return (
-    <Card />
+    <Delivery />
   );
 }
 
