@@ -10,6 +10,7 @@ import Card from './screens/Card';
 import HomePage from './screens/HomePage';
 import DeliveryAdress from './screens/DeliveryAddress';
 import DeliveryOptions from './screens/DeliveryOptions';
+import PaymentMethod from './screens/PaymentMethod';
 
 
 const fetchFonts = () => {
@@ -33,7 +34,7 @@ export default function App() {
     );
   }
   return (
-    <DeliveryOptions />
+    <PaymentMethod />
   );
 }
 
